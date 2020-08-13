@@ -10,6 +10,7 @@ class CardGameTest(unittest.TestCase):
         self.card2=Card("Hearts",2)
         self.card3=Card("Spades",2)
         self.cards1=[self.card1, self.card2, self.card3]
+        self.cards2=[self.card1, self.card3]
         self.game1=CardGame()
         
     #test card has suit
@@ -39,9 +40,14 @@ class CardGameTest(unittest.TestCase):
         output = self.game1.highest_card(self.card2, self.card3)
         self.assertEqual(2,output.value)
 
+    # test total adds up to 5
+    def test_total_add_5(self):
+        output = self.game1.cards_total(self.cards1)
+        self.assertEqual("You have a total of 5",output)
+
     # test total adds up to 3
     def test_total_add_3(self):
-        output = self.game1.cards_total(self.cards1)
-        self.assertEqual(5,output)
+        output = self.game1.cards_total(self.cards2)
+        self.assertEqual("You have a total of 3",output)
 
    
