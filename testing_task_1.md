@@ -22,11 +22,11 @@ class CardGame:
       return card2
  
 
- def cards_total(cards):
+ def cards_total(cards):                  # no self
    total                                  # should have total = 0, indenting wrong - one more space
    for card in cards:                     # indenting wrong one more space
      total += card.value                  # indenting wrong but relatively to for looks right (as with rest)
-     return "You have a total of" + total # should convert total to a string - str(total) this will print every time a card is added, could move to be in line with for
+     return "You have a total of" + total # should convert total to a string - str(total) this will print every time a card is added, should move to be in line with for
 
 
 ```
