@@ -8,7 +8,8 @@ class CardGameTest(unittest.TestCase):
     def setUp(self):
         self.card1=Card("Hearts",1)
         self.card2=Card("Hearts",2)
-
+        self.game1=CardGame()
+        
     #test card has suit
     def test_card_has_suit(self):
         self.assertEqual("Hearts",self.card1.suit)
@@ -18,10 +19,13 @@ class CardGameTest(unittest.TestCase):
     
     #test check for ace true
     def test_check_ace_returns_true(self):
-        output = CardGame.checkforAce(self.card1)
+        output = self.game1.checkforAce(self.card1)
         self.assertEqual(True,output)
         
-    # test card is ace
+    # test card is not ace
+    def test_check_ace_returns_false(self):
+        output = self.game1.checkforAce(self.card2)
+        self.assertEqual(False,output)
 
     # test for highest card is 2
 
