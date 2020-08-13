@@ -8,6 +8,7 @@ class CardGameTest(unittest.TestCase):
     def setUp(self):
         self.card1=Card("Hearts",1)
         self.card2=Card("Hearts",2)
+        self.card3=Card("Spades",2)
         self.game1=CardGame()
         
     #test card has suit
@@ -28,6 +29,13 @@ class CardGameTest(unittest.TestCase):
         self.assertEqual(False,output)
 
     # test for highest card is 2
+    def test_check_which_highest(self):
+        output = self.game1.highest_card(self.card2, self.card1)
+        self.assertEqual(2,output.value)
 
-    # test for 
+    # test cards same value
+    def test_check_neither_highest(self):
+        output = self.game1.highest_card(self.card2, self.card3)
+        self.assertEqual(2,output.value)
+
    
