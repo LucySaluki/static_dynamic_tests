@@ -19,9 +19,9 @@ class CardGame:
             return card2
     
 
-#  def cards_total(cards):
-#    total
-#    for card in cards:
-#      total += card.value
-#      return "You have a total of" + total
+ def cards_total(cards):
+   total
+   for card in cards:
+     total += card.value
+     return "You have a total of" + total
 
